@@ -47,8 +47,11 @@
 			<footer id="footer" class="wrapper alt">
 				<div class="inner">
 					<ul class="menu">
-						<li>&copy; NP Design Studio All rights reserved.</li><li>Design: <a href="http://npdesignstudio.com">NP Design Studio</a></li>
-					</ul>
+    <li>&copy; NP Design Studio. All rights reserved.</li>
+    <li><a href="impressum.html">Impressum</a></li>
+    <li><a href="privacy.html">Privacy Policy</a></li>
+    <li>Design: <a href="http://npdesignstudio.com">NP Design Studio</a></li>
+</ul>
 				</div>
 			</footer>
 
@@ -60,6 +63,29 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+<div id="cookie-notice" style="position: fixed; bottom: 20px; right: 20px; background: #ffffff; border: 1px solid #000; padding: 20px; z-index: 10000; max-width: 300px; font-family: sans-serif; box-shadow: 0 10px 25px rgba(0,0,0,0.1); border-radius: 4px;">
+    <p style="margin: 0 0 15px 0; font-size: 13px; line-height: 1.4; color: #333;">
+        We use analytical tools like Leadfeeder to understand business interest in our designs. 
+        By continuing, you agree to our <a href="privacy.html" style="color: #000; text-decoration: underline;">Privacy Policy</a>.
+    </p>
+    <button onclick="acceptCookies()" style="background: #000; color: #fff; border: none; padding: 10px 0; cursor: pointer; width: 100%; font-weight: bold; text-transform: uppercase; font-size: 11px; letter-spacing: 1px;">
+        Accept
+    </button>
+</div>
 
+<script>
+    // This function hides the notice and remembers the choice for the session
+    function acceptCookies() {
+        document.getElementById('cookie-notice').style.display = 'none';
+        localStorage.setItem('cookieAccepted', 'true');
+    }
+
+    // Check if they already accepted it
+    window.onload = function() {
+        if (localStorage.getItem('cookieAccepted') === 'true') {
+            document.getElementById('cookie-notice').style.display = 'none';
+        }
+    };
+</script>
 	</body>
 </html>
